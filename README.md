@@ -45,3 +45,21 @@ some() 배열 안의 어떤 요소라도 주어진 판별 함수를 통과하는
 ### Vanila JavaScript
 순수 자바스크립트를 사용하여 웹 개발을 진행할 때 ES6 문법을 사용하면
 IE 등 일부 웹브라우저에서는 작동이 불가하여 피하는 게 좋다.
+
+
+### Concat
+두개의 배열을 합친다.
+
+    const array1 = ['a', 'b', 'c'];
+    const array2 = ['d', 'e', 'f'];
+    const array3 = array1.concat(array2); 
+    --> ["a", "b", "c", "d", "e", "f"]
+
+
+### React-Native run multiple emulator
+동시에 여러개의 emulator를 실행시키기 위하여 cmd에다 아래 코드를 실행시킨다.
+
+    react-native run-android --port 8081 --deviceId emulator-5556
+
+
+
