@@ -62,4 +62,8 @@ IE 등 일부 웹브라우저에서는 작동이 불가하여 피하는 게 좋�
     react-native run-android --port 8081 --deviceId emulator-5556
 
 
+### React-Native APK 추출 
+android 폴더에서 cmd를 열고 실행시키면 apk가 생선된다. 
+
+    gradlew assembleRelease
 
