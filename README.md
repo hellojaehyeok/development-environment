@@ -67,3 +67,22 @@ android 폴더에서 cmd를 열고 실행시키면 apk가 생선된다.
 
     gradlew assembleRelease
 
+### redux로 받아온 데이터 편집 && Object string 형식 비교
+
+redux로 받아온 정보는 직접 변환이 불가능 하여 resultObject 변수를 따로 만들어 수정한다.         
+for in 반복문을 사용하여 resultObject의 value값에 접근하여 비교한다.         
+( string 형식 비교 -> 같으면 return 하여 정보수정을 막는다. 아래 코드는 장바구니)         
+count를 따로 만드는 이유는 ClickData에 count를 만들면 추후 조건문 비교를 할때         
+문자열이 달라져 장바구니에 추가될 수 있다.         
+
+
+    let resultObject = JSON.parse(JSON.stringify(deliveryData.cartData));
+
+    for(let key in resultObject){
+       if(JSON.stringify(resultObject[key].product) === JSON.stringify( ClickData )){
+          return;
+       }
+    }
+
+    resultObject[new Date().getTime()] = { count : 1 , product :  ClickData };
+    DeliveryDataAction.updateCartData({ cartData: resultObject });
