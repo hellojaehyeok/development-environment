@@ -143,10 +143,57 @@ ex) 접속 시 로컬에 저장해 두었던 데이터를 redux에 넣어 다시
 
 데이터 가져오기
 
-    let cartLocal = localStorage.getItem("cartData");
+    let data = localStorage.getItem("dataName");
 
 
 데이터 저장
 
-    localStorage.setItem( "cartData", --- );
+    localStorage.setItem( "dataName", --- );
+
+
+## React document 선택자 (중요)   
+document.---- 선택자는 react에서 사용하지 말아야 한다.       
+build 시 class, id 가 겹치게 되면 오류가 난다.       
+useState 혹은 useRef, redux를 사용하여야 한다.       
+
+    document.getElementById(id);         
+    document.querySelector(selectors);   
+
+
+## JavaScript data-X
+data-text를 이용하면 함수 내에서 이름을 다 지정하지 않아도       
+dataset을 사용하여 간결하게 코드를 작성할 수 있다.       
+
+
+    const onClickDiv = (e) => {
+      console.log(e.target.dataset.text);
+    }
+    .
+    .
+    .
+    <div data-text="hello" onClick={(e) => onClickDiv(e)}>Hello</div>
+    <div data-text="world" onClick={(e) => onClickDiv(e)}>World</div>
+
+
+## React Style Components
+React Style Component 안에서 class style 지정        
+
+    & > .hidden{
+        display:none;
+    }
+
+props로 받은 상태에 따라 style 분기 처리         
+
+    // isFilter에 따라 top값 조정
+    ${({isFilter})=>{
+        return isFilter?
+        `
+        top:calc(100vw*(80/428));
+        `
+        :
+        `
+        top:calc(100vw*(15/428));
+        `
+    }}
+
 
