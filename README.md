@@ -197,3 +197,11 @@ props로 받은 상태에 따라 style 분기 처리
     }}
 
 
+# 포트 확인 및 제거
+확인
+    
+    netstat -ano
+
+제거    
+
+    taskkill /f /pid 19072
