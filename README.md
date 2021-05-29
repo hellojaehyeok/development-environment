@@ -89,12 +89,6 @@ count를 따로 만드는 이유는 ClickData에 count를 만들면 추후 조�
 
 
 
-## 숫자 3자리 단위로 " , " 넣기 
-1000 -> 1,000        
-
-
-    let priceText = String(priceCal).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
-
 
 ## 숫자 한글로 표현 
 100,000 -> 일십만        
@@ -197,7 +191,7 @@ props로 받은 상태에 따라 style 분기 처리
     }}
 
 
-# 포트 확인 및 제거
+## 포트 확인 및 제거
 확인
     
     netstat -ano
@@ -205,3 +199,28 @@ props로 받은 상태에 따라 style 분기 처리
 제거    
 
     taskkill /f /pid 19072
+
+## 날짜변환
+서버 혹은 new Date()로 가져온 날짜를 원하는 형식으로 바꿔주는 코드입니다.         
+
+사용법         
+DateText(날짜, 중간 텍스트)         
+
+dateText.js         
+
+    export default function DateText(date, text){
+        return (`${date.getFullYear()}${text}${date.getMonth()+1}${text}${date.getDate()}`)
+    }
+
+## 숫자 3자리 단위로 " , " 넣기 
+
+사용법         
+InsertComma(숫자)         
+1000 -> 1,000                 
+
+insertComma.js         
+
+    export default function InsertComma(int){
+        return (String(int).replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'))
+    }
+
