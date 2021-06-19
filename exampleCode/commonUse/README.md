@@ -21,16 +21,19 @@ ex) DateText(new Date("2021-01-01"), ",")  // 2021.01.01
 두 번째 파라미터인 text를 넣지 않을 시에는 undefined가 뜹니다.       
 
     function DateText(date, text){
-        let month = String(date.getMonth()+1).length;
-        let _date = String(date.getDate()).length;
-        if(month == 1){
+        let month = String(date.getMonth()+1);
+        let _date = String(date.getDate());
+        
+        if(month.length == 1){
             month = "0"+String(date.getMonth()+1);
         }
-        if(_date == 1){
+        if(_date.length == 1){
             _date = "0"+String(date.getDate());
         }
+
         return (`${date.getFullYear()}${text}${month}${text}${_date}`)
     }
+
 
 # 텍스트 자르기
 긴 텍스트를 자르는 함수입니다.       

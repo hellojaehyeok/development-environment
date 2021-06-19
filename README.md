@@ -200,3 +200,29 @@ props로 받은 상태에 따라 style 분기 처리
 
     taskkill /f /pid 19072
 
+## n년전 날짜 구하기
+
+    // 현재 날짜
+    const today = new Date(); 
+    // 5년전 날짜 
+    console.log(new Date(today.setFullYear(today.getFullYear() - 5)));
+
+## 영문/특수문자/문자열길이 정규식 정리
+
+    (?=.*[A-Za-z])           // 영문
+    (?=.*?[A-Z])             // 최소 한개의 대문자 영문
+    (?=.*?[a-z])             // 최소 한개의 소문자 영문
+    (?=.*?[0-9])             // 최소 한개의 숫자
+    (?=.*?[#?!@$%^&*-])      // 최소 한개의 특수 문자
+    { 8 , 10 }              // 최소 8자 최대 10자
+
+이 정규식들을 합치면 자유롭게 사용할 수 있다.
+
+ex) 아래 코드는 최소 8 자, 최대 10자 영문/특수문자 조합
+
+    const checked = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,10}$/;
+    console.log(checked.test("123qwe!!!")); // true
+
+## 빈 Object 감지
+
+    Object.keys( testObj ).length !== 0

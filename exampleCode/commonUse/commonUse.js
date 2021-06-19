@@ -7,14 +7,16 @@ function InsertComma(int){
 
 // 날짜 -> 텍스트 변환
 function DateText(date, text){
-    let month = String(date.getMonth()+1).length;
-    let _date = String(date.getDate()).length;
-    if(month == 1){
+    let month = String(date.getMonth()+1);
+    let _date = String(date.getDate());
+
+    if(month.length == 1){
         month = "0"+String(date.getMonth()+1);
     }
-    if(_date == 1){
+    if(_date.length == 1){
         _date = "0"+String(date.getDate());
     }
+
     return (`${date.getFullYear()}${text}${month}${text}${_date}`)
 }
 
