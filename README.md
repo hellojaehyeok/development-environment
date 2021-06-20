@@ -226,3 +226,9 @@ ex) 아래 코드는 최소 8 자, 최대 10자 영문/특수문자 조합
 ## 빈 Object 감지
 
     Object.keys( testObj ).length !== 0
+
+## 최소, 최대 랜덤값
+
+    Math.round((Math.random() * ( 최대 - 최소) + 최소);
+    // 최소 ~ 최대
+     
