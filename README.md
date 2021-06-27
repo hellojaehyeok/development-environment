@@ -232,3 +232,20 @@ ex) 아래 코드는 최소 8 자, 최대 10자 영문/특수문자 조합
     Math.round((Math.random() * ( 최대 - 최소) + 최소);
     // 최소 ~ 최대
      
+## 랜던 문자열
+랜덤함 문자열이 필요할때 사용하면 된다.
+
+    function randomString () {
+        // 대문자 영문 
+        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXTZ';
+        // 반환받을 문자열의 수
+        var stringLength = 2;
+        var randomstring = ''
+        for (var i = 0; i < stringLength; i++) {
+            var rnum = Math.floor(Math.random() * chars.length)
+            randomstring += chars.substring(rnum, rnum + 1)
+        }
+        return randomstring
+    }
+
+    console.log(randomString());
