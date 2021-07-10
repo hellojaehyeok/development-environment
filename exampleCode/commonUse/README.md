@@ -45,6 +45,7 @@ CSS를 이용하여 자를 수 있지만 여러 줄을 자르고 싶을 때에�
 ex) SliceText("가나다라마바사", 3) // 가나다...       
 
     function SliceText(text, int){
+        if(text.length < int){return text}
         let newText = text;
         newText=newText.substring(0, int) + "...";
         return newText;

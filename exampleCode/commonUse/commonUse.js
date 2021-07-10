@@ -22,6 +22,7 @@ function DateText(date, text){
 
 // 문자열 자르고 "..."넣기
 function SliceText(text, int){
+    if(text.length < int){return text}
     let newText = text;
     newText=newText.substring(0, int) + "...";
     return newText;
