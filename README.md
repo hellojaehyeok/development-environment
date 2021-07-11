@@ -56,17 +56,6 @@ IE 등 일부 웹브라우저에서는 작동이 불가하여 피하는 게 좋�
     --> ["a", "b", "c", "d", "e", "f"]
 
 
-## React-Native run multiple emulator
-동시에 여러개의 emulator를 실행시키기 위하여 cmd에다 아래 코드를 실행시킨다.
-
-    react-native run-android --port 8081 --deviceId emulator-5556
-
-
-## React-Native APK 추출 
-android 폴더에서 cmd를 열고 실행시키면 apk가 생선된다. 
-
-    gradlew assembleRelease
-
 ## redux로 받아온 데이터 편집 && Object string 형식 비교
 
 redux로 받아온 정보는 직접 변환이 불가능 하여 resultObject 변수를 따로 만들어 수정한다.         
