@@ -208,9 +208,9 @@ props로 받은 상태에 따라 style 분기 처리
     (?=.*?[#?!@$%^&*-])      // 최소 한개의 특수 문자
     { 8 , 10 }              // 최소 8자 최대 10자
 
-이 정규식들을 합치면 자유롭게 사용할 수 있다.
+이 정규식들을 합치면 자유롭게 사용할 수 있다.        
 
-ex) 아래 코드는 최소 8 자, 최대 10자 영문/특수문자 조합
+ex) 아래 코드는 최소 8 자, 최대 10자 영문/특수문자 조합        
 
     const checked = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,10}$/;
     console.log(checked.test("123qwe!!!")); // true
@@ -225,7 +225,7 @@ ex) 아래 코드는 최소 8 자, 최대 10자 영문/특수문자 조합
     // 최소 ~ 최대
      
 ## 랜던 문자열
-랜덤함 문자열이 필요할때 사용하면 된다.
+랜덤함 문자열이 필요할때 사용하면 된다.        
 
     function randomString () {
         // 대문자 영문 
@@ -402,3 +402,44 @@ package.json - start 를 수정하면 https로 열린다.
 
     }
 
+## IE 감지
+
+        var agt = navigator.userAgent.toLowerCase();
+
+        if( (navigator.appName == 'Netscape' && agt.indexOf('trident') != -1) || (agt.indexOf("msie") != -1)) {
+            -- IE일경우
+        }else{
+            -- IE가 아닐 경우
+        }
+
+## React IE 호환 
+package.json 
+
+    "dependencies": {
+        ...
+        "react-app-polyfill": "^2.0.0",
+    }
+    .
+    .
+    .
+    "browserslist": {
+        "production": [
+            ...
+            "ie 11"
+        ],
+        "development": [
+            ...
+            "ie 11"
+        ]
+    }
+
+index.js 최상단에 import        
+
+    import 'react-app-polyfill/ie11';
+    import 'react-app-polyfill/stable';
+
+react-redux immer를 사용할 경우 enableAllPlugins() 사용       
+
+    import { enableAllPlugins } from 'immer';
+    import produce from 'immer';
+    enableAllPlugins();
