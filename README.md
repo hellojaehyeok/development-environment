@@ -443,3 +443,43 @@ react-redux immer를 사용할 경우 enableAllPlugins() 사용
     import { enableAllPlugins } from 'immer';
     import produce from 'immer';
     enableAllPlugins();
+    
+    
+    
+## url파일 File로 변환방법
+
+저는 엑셀데이터입니다
+
+    var _url = 'URL';
+    if(!_url){return};
+    var _jsonData = {
+      name: 'webisfree',
+      url: 'webisfree.com'
+    };
+    
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var _data = this.response;
+
+        let file = new File([_data], "result.xlsx",{type:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"});    
+            var reader = new FileReader();
+            reader.onload = function () {
+                var data = reader.result;
+                var workBook = XLSX.read(data, { type: 'binary' });
+                workBook.SheetNames.forEach(function (sheetName) {
+                    var rows = XLSX.utils.sheet_to_json(workBook.Sheets[sheetName]);
+                    var xlsxData = JSON.parse(JSON.stringify(rows));
+                    adminXlsxData = xlsxData;
+                    parsingData(xlsxData);
+                })
+            };
+            reader.readAsBinaryString(file);
+      };
+    };
+    
+    xhr.open('POST', _url);
+    xhr.responseType = 'blob';
+    xhr.setRequestHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    xhr.send(_jsonData);
+    
