@@ -483,3 +483,13 @@ react-redux immer를 사용할 경우 enableAllPlugins() 사용
     xhr.setRequestHeader('Content-type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     xhr.send(_jsonData);
     
+    
+## 두 점사이의 거리 구하기
+
+    var x = descX - lineX;
+    var y = descY - lineY;
+    var radian = Math.atan2(y, x);
+    var degree = radian * 180 / Math.PI // 라디안 -> 디그리 변환
+    
+    
+
