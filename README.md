@@ -87,8 +87,11 @@ git_new_branch() {
 14. ESLint
 15. Prettier - Code formatter
 
-16. Jest
-17. Jest Runner
+16. TODO Highlight
+17. Turbo Console Log
+	
+18. Jest
+19. Jest Runner
 
 </details>
 
@@ -97,8 +100,9 @@ git_new_branch() {
 <details>
  <summary>Keyboard Shortcuts</summary>
 
-custom shortcuts
-
+custom shortcuts          
+Preferences: Open Keyboard Shortcuts JSON
+	
 ```json
 {
     "key": "cmd+e",
@@ -128,7 +132,13 @@ custom shortcuts
 {
     "key": "cmd+5",
     "command": "workbench.action.terminal.focusAtIndex5"
+},
+{
+    "key": "shift+cmd+r",
+    "command": "extension.runJest"
 }
+
+	
 ```
 
 </details>
