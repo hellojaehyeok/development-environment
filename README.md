@@ -104,41 +104,55 @@ custom shortcuts
 Preferences: Open Keyboard Shortcuts JSON
 	
 ```json
-{
+[
+  {
     "key": "cmd+e",
     "command": "workbench.action.togglePanel"
-},
-{
+  },
+  {
     "key": "cmd+r",
     "command": "editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-},
-{
+  },
+  {
     "key": "cmd+1",
     "command": "workbench.action.terminal.focusAtIndex1"
-},
-{
+  },
+  {
     "key": "cmd+2",
     "command": "workbench.action.terminal.focusAtIndex2"
-},
-{
+  },
+  {
     "key": "cmd+3",
     "command": "workbench.action.terminal.focusAtIndex3"
-},
-{
+  },
+  {
     "key": "cmd+4",
     "command": "workbench.action.terminal.focusAtIndex4"
-},
-{
+  },
+  {
     "key": "cmd+5",
     "command": "workbench.action.terminal.focusAtIndex5"
-},
-{
+  },
+  {
+    "key": "cmd+6",
+    "command": "workbench.action.terminal.focusAtIndex6"
+  }
+  {
     "key": "shift+cmd+r",
     "command": "extension.runJest"
-}
-
-	
+  },
+  {
+    "key": "shift+cmd+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+]	
 ```
 
 </details>
